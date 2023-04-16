@@ -1,11 +1,11 @@
 apiVersion: kafka.strimzi.io/v1beta2
 kind: Kafka
 metadata:
-  name: my-cluster
+  name: testing-cluster
 spec:
   kafka:
     version: 3.2.0
-    replicas: 1
+    replicas: 3
     listeners:
       - name: plain
         port: 9092
@@ -24,10 +24,18 @@ spec:
       inter.broker.protocol.version: "3.2"
     storage:
       type: ephemeral
+    # storage:
+    #   type: persistent-claim
+    #   size: 5Gi
+    #   deleteClaim: false  
   zookeeper:
     replicas: 3
     storage:
       type: ephemeral
+    # storage:
+    #   type: persistent-claim
+    #   size: 5Gi
+    #   deleteClaim: false
   entityOperator:
     topicOperator: {}
     userOperator: {}

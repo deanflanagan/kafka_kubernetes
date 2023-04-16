@@ -61,3 +61,9 @@ kubectl -n kafka run kafka-consumer -ti --image=quay.io/strimzi/kafka:0.32.0-kaf
 ## Next steps<a name="next-steps"></a>
 
 One way to extend this model is to now leverage Kafka Connect API with Debezium. This will allow one to connect directly to a database (mysql, postgres etc) for structured persistence of the Kafka messages. More information here: https://debezium.io/documentation/reference/stable/operations/kubernetes.html
+
+### TLS scripts 
+
+Run scripts in tls folder. They will:
+
+- break out 
